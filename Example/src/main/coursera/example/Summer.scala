@@ -6,8 +6,8 @@ import ChecksumAccumulator.calculate
       println(arg + ": " + calculate(arg))
   }
 }*/
-object FallWinterSpringSummer extends App {
+object Summer extends App {
 
-  for (season <- List("fall", "winter", "spring"))
-    println(season + ": " + calculate(season))
+  for (arg <- args)
+    println(arg + ": " + calculate(arg))
 }
