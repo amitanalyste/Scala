@@ -11,26 +11,33 @@ class Rational(numerator: Int, denominator: Int) {
 
   def +(that: Rational): Rational =
     new Rational((p * that.q + that.p * q), q*that.q)
+  def +(that: Int): Rational =
+    new Rational(p + q*that, q)
+
   def *(that: Rational): Rational =
     new Rational(p * that.p, q * that.q)
+  def *(that: Int) = new Rational(p*that, q)
   def inverse() = new Rational(-p, q)
+
   def -(that: Rational): Rational =
     this + (that.inverse)
     //new Rational((p * that.q - that.p * q), q*that.q)
+  def -(that: Integer): Rational =
+    new Rational(p - q*that, q)
 
+  def /(that: Rational) = new Rational(p * that.q, q * that.p)
+  def /(that: Int) = new Rational(p, q * that)
   def >(that: Rational): Boolean = p * that.q > q * that.p
   def <(that: Rational): Boolean = that > this
+  
   def max(that: Rational) = if (this > that) this else that
 
   override def toString() = if (q == 1) p.toString else p + "/" + q
+
 }
+implicit def intToRational(x: Int) = new Rational(x)
+val x = new Rational(2, 3)
 
-val x = new Rational(1, 2)
-val y = new Rational(2, 3)
-x + y
-(x + x) - y
-x + (x * y)
-x > y
-x < y
-
-
+x * x
+x * 2
+2 * x
