@@ -36,5 +36,8 @@ object Chapter2{
   def formatArgs(args: Array[String]) =
     args.mkString("\n")
   formatArgs(Array("Zero", "One", "Two"))
+  val name = "Header"
+  println(s"Hello, $name!")
+  f"${math.Pi}%.5f"
   
 }

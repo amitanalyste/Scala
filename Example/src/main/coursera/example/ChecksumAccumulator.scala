@@ -18,5 +18,7 @@ object ChecksumAccumulator {
       cache += (s -> cs)
       cs
     }
+  val name = "Header"
+  println(s"Hello, $name!")
 }
 
